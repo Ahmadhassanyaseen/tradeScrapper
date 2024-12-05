@@ -1,6 +1,6 @@
 #Sample Dockerfile for NodeJS Apps
 
-FROM node:16
+FROM node:20
 
 ENV NODE_ENV=production
 
