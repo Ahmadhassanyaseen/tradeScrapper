@@ -1,0 +1,66 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.price-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.charts {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+.transactions-panel {
+    @apply bg-white rounded-lg shadow-md p-6 mt-8;
+}
+
+.transactions-container {
+    @apply overflow-x-auto mt-4;
+}
+
+#transactions-table {
+    @apply min-w-full divide-y divide-gray-200;
+}
+
+#transactions-table thead {
+    @apply bg-gray-50;
+}
+
+#transactions-table th {
+    @apply px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+#transactions-table tbody {
+    @apply bg-white divide-y divide-gray-200;
+}
+
+#transactions-table td {
+    @apply px-4 py-3 whitespace-nowrap;
+}
+
+.transaction-type {
+    @apply px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800;
+}
+
+#transactions-table tr:hover {
+    background-color: #f8f9fa;
+} 

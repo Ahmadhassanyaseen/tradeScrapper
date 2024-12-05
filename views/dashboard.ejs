@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Solana Price Tracker</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="/transactions.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Solana Price Tracker</h1>
+        
+        <div class="price-cards">
+            <div class="card">
+                <h3>Binance Price</h3>
+                <p id="binance-price">$<%= data[0].binancePrice %></p>
+            </div>
+            <div class="card">
+                <h3>CoinGecko Price</h3>
+                <p id="gecko-price">$<%= data[0].geckoPrice %></p>
+            </div>
+            <div class="card">
+                <h3>Market Cap</h3>
+                <p id="market-cap">$<%= (data[0].marketCap / 1000000000).toFixed(2) %>B</p>
+            </div>
+        </div>
+
+        <div class="charts">
+            <canvas id="priceChart"></canvas>
+            <canvas id="volumeChart"></canvas>
+        </div>
+
+        <div class="transactions-panel">
+            <h2 class="text-2xl font-bold m-4">Latest Transactions</h2>
+            <div class="transactions-container">
+                <table id="transactions-table" class="table-auto w-full text-left">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Amount (SOL)</th>
+                            <th>Value (USD)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions-body">
+                        <!-- Transactions will be loaded here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const priceData = <%- JSON.stringify(data) %>;
+    </script>
+    <script src="/js/charts.js"></script>
+</body>
+</html> 
